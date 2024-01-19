@@ -18,6 +18,7 @@ class BaseViewModel extends ChangeNotifier {
   BuildContext context;
 
   var adbPath = "";
+  var doctorApkPath = "";
 
   bool _isLoading = false;
 

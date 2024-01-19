@@ -5,6 +5,7 @@ import 'package:tools/page/android_tools/android_tools_page.dart';
 import 'package:tools/page/common/base_page.dart';
 import 'package:tools/page/crypto/crypto_tools_page.dart';
 import 'package:tools/page/json_tools/json_tools_page.dart';
+import 'package:tools/page/mushi_pad_one/mushi_pad_one_page.dart';
 import 'package:tools/page/qrcode/qrcode_tools_page.dart';
 import 'package:tools/page/xml_tools/xml_tools_page.dart';
 import 'package:tools/widget/text_view.dart';
@@ -46,6 +47,7 @@ class _MainPageState extends BasePage<MainPage, MainViewModel> {
               _leftItem("images/ic_folder.svg", "正则", 5),
               _leftItem("images/ic_folder.svg", "IOS图标生成", 6),
               _leftItem("images/ic_folder.svg", "字符操作", 7), // （串驼峰 下划线等）
+              _leftItem("images/ic_settings.svg", "目视一代Pad", 8),
             ],
           ),
         ),
@@ -76,6 +78,8 @@ class _MainPageState extends BasePage<MainPage, MainViewModel> {
         return const CryptoToolsPage();
       case 4:
         return const QRCodeToolsPage();
+      case 8:
+        return const MuShiPadOnePage();
       default:
         return Container();
     }

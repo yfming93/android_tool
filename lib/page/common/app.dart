@@ -11,6 +11,8 @@ class App {
   static const String deviceIdKey = "deviceIdKey";
   static const String packageNameKey = "packageNameKey";
   static const String adbFilePathKey = "adbFilePathKey";
+  static const String doctorApkPathKey = "doctorApkPathKey";
+  static const String hostsFileContentKey = "hostsFileContentKey";
 
   final EventBus eventBus = EventBus();
 
@@ -19,6 +21,10 @@ class App {
   String _packageName = "";
 
   String _adbPath = "";
+
+  String _doctorApkPath = "";
+
+  String _hostsFileContent = "";
 
   /// 保存设备ID
   Future<void> setDeviceId(String deviceId) async {
@@ -69,6 +75,39 @@ class App {
     }
     return _adbPath;
   }
+
+
+  /// 保存Doctor安装包路径
+  Future<void> setDoctorApkPath(String path) async {
+    _doctorApkPath = path;
+    final prefs = await SharedPreferences.getInstance();
+    var res = await prefs.setString(doctorApkPathKey, path);
+    eventBus.fire(DoctorApkPathEvent(path));
+  }
+
+  /// 获取doctor安装包路径
+  Future<String> getDoctorApkPath() async {
+    if (_doctorApkPath.isEmpty){
+      final prefs = await SharedPreferences.getInstance();
+      _doctorApkPath = prefs.getString(doctorApkPathKey) ?? "";
+    }
+    return _doctorApkPath;
+  }
+
+  /// 保存Hosts文件内容
+  Future<void> setHostsFileContent(String content)async{
+    _hostsFileContent = content;
+    final prefs = await SharedPreferences.getInstance();
+    var res = await prefs.setString(hostsFileContentKey, content);
+  }
+  /// 读取Hosts文件内容
+  Future<String> getHostsFileContent() async {
+    if (_hostsFileContent.isEmpty){
+      final prefs = await SharedPreferences.getInstance();
+      _hostsFileContent = prefs.getString(hostsFileContentKey) ?? "";
+    }
+    return _hostsFileContent;
+  }
 }
 
 class DeviceIdEvent {
@@ -81,4 +120,10 @@ class AdbPathEvent {
   String path;
 
   AdbPathEvent(this.path);
+}
+
+class DoctorApkPathEvent {
+  String path;
+
+  DoctorApkPathEvent(this.path);
 }
