@@ -123,15 +123,18 @@ class AndroidLogViewModel extends BaseViewModel with PackageHelpMixin {
         if (filterContent.isNotEmpty
             ? line.toLowerCase().contains(filterContent.toLowerCase())
             : true) {
-          if (logList.length > 1000) {
+          if (logList.length > 3000) {
             logList.removeAt(0);
           }
           logList.add(line);
           notifyListeners();
           if (isShowLast) {
-            scrollController.jumpTo(
-              scrollController.position.maxScrollExtent,
-            );
+            //bugfix: ScrollController not attached to any scroll views.
+            if(scrollController.hasClients){
+              scrollController.jumpTo(
+                scrollController.position.maxScrollExtent,
+              );
+            }
           }
         }
       });
