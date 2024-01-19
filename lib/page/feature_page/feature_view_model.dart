@@ -1,10 +1,12 @@
-import 'package:android_tool/page/common/app.dart';
-import 'package:android_tool/page/common/base_view_model.dart';
-import 'package:android_tool/page/common/key_code.dart';
-import 'package:android_tool/page/common/package_help_mixin.dart';
-import 'package:android_tool/widget/input_dialog.dart';
-import 'package:android_tool/widget/list_filter_dialog.dart';
-import 'package:android_tool/widget/remote_control_dialog.dart';
+import 'dart:io';
+
+import 'package:tools/page/common/app.dart';
+import 'package:tools/page/common/base_view_model.dart';
+import 'package:tools/page/common/key_code.dart';
+import 'package:tools/page/common/package_help_mixin.dart';
+import 'package:tools/widget/input_dialog.dart';
+import 'package:tools/widget/list_filter_dialog.dart';
+import 'package:tools/widget/remote_control_dialog.dart';
 import 'package:desktop_drop/desktop_drop.dart';
 import 'package:file_selector/file_selector.dart';
 import 'package:flutter/material.dart';
@@ -277,14 +279,14 @@ class FeatureViewModel extends BaseViewModel with PackageHelpMixin {
       return;
     } else {
       var path = apkFilePath.outLines.first.replaceAll("package:", "");
-      var savePath = await getSavePath(suggestedName: packageName + ".apk");
+      var savePath = await getSaveLocation(suggestedName: packageName + ".apk");
       if (savePath == null) return;
       var result = await execAdb([
         '-s',
         deviceId,
         'pull',
         path,
-        savePath,
+        savePath.path,
       ]);
       showResultDialog(
         content: result != null && result.exitCode == 0 ? "保存成功" : "保存失败",
@@ -397,6 +399,16 @@ class FeatureViewModel extends BaseViewModel with PackageHelpMixin {
       var activity = outLines.first.replaceAll("mCurrentFocus=", "");
       showResultDialog(content: activity);
     }
+  }
+
+  /// 复制shell命令
+  Future<void> copyShell() async {
+    String shellCmd = "adb -s " + deviceId;
+    Clipboard.setData(ClipboardData(text: shellCmd));
+    // 打开终端
+    Process.start("open", ["-a", "Terminal"]).then((Process process) {
+      process.stdin.writeln(shellCmd);
+    });
   }
 
   ///查看设备AndroidId

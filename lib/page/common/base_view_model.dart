@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:android_tool/page/common/app.dart';
-import 'package:android_tool/widget/confirm_dialog.dart';
+import 'package:tools/page/common/app.dart';
+import 'package:tools/widget/confirm_dialog.dart';
 import 'package:file_selector/file_selector.dart';
 import 'package:flutter/material.dart';
 import 'package:process_run/shell_run.dart';

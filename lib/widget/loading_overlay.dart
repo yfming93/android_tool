@@ -1,4 +1,4 @@
-import 'package:android_tool/widget/text_view.dart';
+import 'package:tools/widget/text_view.dart';
 import 'package:flutter/material.dart';
 
 class LoadingOverlay extends StatefulWidget {

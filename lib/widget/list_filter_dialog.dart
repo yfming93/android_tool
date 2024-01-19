@@ -1,5 +1,5 @@
-import 'package:android_tool/page/common/package_help_mixin.dart';
-import 'package:android_tool/widget/text_view.dart';
+import 'package:tools/page/common/package_help_mixin.dart';
+import 'package:tools/widget/text_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';

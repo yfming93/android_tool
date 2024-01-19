@@ -40,4 +40,5 @@ class IconFont {
   static const IconData swipeRight = IconData(0xe60a, fontFamily: "IconFont");
   static const IconData click = IconData(0xe6ca, fontFamily: "IconFont");
   static const IconData remoteControl = IconData(0xe697, fontFamily: "IconFont");
+  static const IconData shell = IconData(0xe61e, fontFamily: "IconFont");
 }

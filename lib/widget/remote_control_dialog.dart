@@ -1,5 +1,5 @@
-import 'package:android_tool/page/common/key_code.dart';
-import 'package:android_tool/widget/text_view.dart';
+import 'package:tools/page/common/key_code.dart';
+import 'package:tools/widget/text_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

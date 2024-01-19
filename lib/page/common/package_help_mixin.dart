@@ -1,6 +1,6 @@
-import 'package:android_tool/page/common/app.dart';
-import 'package:android_tool/page/common/base_view_model.dart';
-import 'package:android_tool/widget/list_filter_dialog.dart';
+import 'package:tools/page/common/app.dart';
+import 'package:tools/page/common/base_view_model.dart';
+import 'package:tools/widget/list_filter_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:process_run/shell.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -47,7 +47,7 @@ mixin PackageHelpMixin implements BaseViewModel {
       'pm',
       'list',
       'packages',
-      isShowSysApp ? '' : '-3',
+      isShowSysApp ? '' : '0',
     ]);
     if (installedApp == null) {
       resetPackage();

@@ -1,7 +1,7 @@
-import 'package:android_tool/page/common/base_page.dart';
-import 'package:android_tool/page/common/icon_font.dart';
-import 'package:android_tool/page/feature_page/feature_view_model.dart';
-import 'package:android_tool/widget/text_view.dart';
+import 'package:tools/page/common/base_page.dart';
+import 'package:tools/page/common/icon_font.dart';
+import 'package:tools/page/feature_page/feature_view_model.dart';
+import 'package:tools/widget/text_view.dart';
 import 'package:desktop_drop/desktop_drop.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -81,6 +81,30 @@ class _FeaturePageState extends BasePage<FeaturePage, FeatureViewModel> {
                               ),
                             ],
                           ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: <Widget>[
+                              buttonView(
+                                IconFont.shell,
+                                "复制Shell命令",
+                                    () {
+                                  viewModel.copyShell();
+                                },
+                              ),
+                              Expanded(
+                                flex: 1,
+                                child: Container(),
+                              ),
+                              Expanded(
+                                flex: 1,
+                                child: Container(),
+                              ),
+                              Expanded(
+                                flex: 1,
+                                child: Container(),
+                              ),
+                            ],
+                          )
                         ],
                       ),
                     ),

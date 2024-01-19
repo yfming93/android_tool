@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:android_tool/page/common/base_page.dart';
-import 'package:android_tool/page/devices_info/devices_info_view_model.dart';
+import 'package:tools/page/common/base_page.dart';
+import 'package:tools/page/devices_info/devices_info_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

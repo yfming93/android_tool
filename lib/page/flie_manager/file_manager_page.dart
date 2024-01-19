@@ -1,6 +1,6 @@
-import 'package:android_tool/page/common/base_page.dart';
-import 'package:android_tool/page/flie_manager/file_model.dart';
-import 'package:android_tool/widget/text_view.dart';
+import 'package:tools/page/common/base_page.dart';
+import 'package:tools/page/flie_manager/file_model.dart';
+import 'package:tools/widget/text_view.dart';
 import 'package:desktop_drop/desktop_drop.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

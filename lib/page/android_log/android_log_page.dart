@@ -1,7 +1,7 @@
-import 'package:android_tool/page/android_log/android_log_view_model.dart';
-import 'package:android_tool/page/common/base_page.dart';
-import 'package:android_tool/widget/pop_up_menu_button.dart';
-import 'package:android_tool/widget/text_view.dart';
+import 'package:tools/page/android_log/android_log_view_model.dart';
+import 'package:tools/page/common/base_page.dart';
+import 'package:tools/widget/pop_up_menu_button.dart';
+import 'package:tools/widget/text_view.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_list_view/flutter_list_view.dart';

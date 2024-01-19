@@ -1,5 +1,5 @@
-import 'package:android_tool/page/common/app.dart';
-import 'package:android_tool/widget/text_view.dart';
+import 'package:tools/page/common/app.dart';
+import 'package:tools/widget/text_view.dart';
 import 'package:desktop_drop/desktop_drop.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:file_selector/file_selector.dart';

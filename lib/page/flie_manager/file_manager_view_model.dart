@@ -1,6 +1,6 @@
-import 'package:android_tool/page/common/app.dart';
-import 'package:android_tool/page/common/base_view_model.dart';
-import 'package:android_tool/widget/text_view.dart';
+import 'package:tools/page/common/app.dart';
+import 'package:tools/page/common/base_view_model.dart';
+import 'package:tools/widget/text_view.dart';
 import 'package:desktop_drop/desktop_drop.dart';
 import 'package:file_selector/file_selector.dart';
 import 'package:flutter/gestures.dart';
@@ -203,14 +203,14 @@ class FileManagerViewModel extends BaseViewModel {
 
   /// 保存文件
   Future<void> saveFile(int index) async {
-    var savePath = await getSavePath(suggestedName: files.value[index].name);
+    var savePath = await getSaveLocation(suggestedName: files.value[index].name);
     if (savePath == null) return;
     var result = await execAdb([
       "-s",
       deviceId,
       "pull",
       currentPath + files.value[index].name,
-      savePath
+      savePath.path
     ]);
     if (result != null && result.exitCode == 0) {
       showResultDialog(content: "保存成功");
