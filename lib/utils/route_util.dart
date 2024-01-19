@@ -10,7 +10,7 @@ void pushAndRemovePage(BuildContext context, Widget routePage) {
 }
 
 void pushNewPage(BuildContext context, Widget routePage,
-    {Function? callBack, fullscreenDialog: false}) {
+    {Function? callBack, fullscreenDialog = false}) {
   Navigator.push(
           context,
           MaterialPageRoute(
@@ -52,10 +52,10 @@ void pushNewPageAnimation(
   Widget toPage, {
   required TransitionType type,
   required Widget fromPage,
-  Duration duration: const Duration(milliseconds: 500),
-  Curve curve: Curves.fastOutSlowIn,
-  SlideDirection direction: SlideDirection.right2left,
-  Axis axis: Axis.vertical,
+  Duration duration = const Duration(milliseconds: 500),
+  Curve curve = Curves.fastOutSlowIn,
+  SlideDirection direction = SlideDirection.right2left,
+  Axis axis = Axis.vertical,
   Function? callBack,
   Function? onSuccess,
 }) {

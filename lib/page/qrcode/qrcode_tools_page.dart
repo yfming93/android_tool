@@ -79,7 +79,7 @@ class _QRCodeToolsPageState
                       key: globalKey,
                       child: Container(
                         color: Colors.white,
-                        child: QrImage(
+                        child: QrImageView(
                           data: _data,
                           version: QrVersions.auto,
                           size: 200.0,
